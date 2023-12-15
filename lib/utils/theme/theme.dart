@@ -11,7 +11,7 @@ import 'package:t_store/utils/theme/widget_themes/text_theme.dart';
 import '../constants/colors.dart';
 
 class TAppTheme {
-  TAppTheme._();
+  TAppTheme._(); // constructor is private
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
