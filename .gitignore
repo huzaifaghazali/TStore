@@ -1,0 +1,68 @@
+# Flutter/Dart/Pub related
+.vscode/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.build/
+/build/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Android Studio
+*.iml
+.idea/
+
+# Xcode
+*.xcworkspace/
+*.xcodeproj/
+/ios/Pods/
+/ios/.symlinks/
+/ios/Flutter/ephemeral/
+
+# Gradle
+.gradle/
+/captures/
+
+# macOS specific
+.DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# Flutter package dependencies
+.packages
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Android Studio
+*.iml
+.idea/
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Gradle
+.gradle/
+/captures/
+
+# macOS specific
+.DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# Flutter package dependencies
+.packages
