@@ -32,6 +32,7 @@ class OnBoardingScreen extends StatelessWidget {
             ),
           ],
         )
+
         // Skip Button
 
         // Dot Navigation SmoothPageIndicator
@@ -60,7 +61,7 @@ class OnBoardingPage extends StatelessWidget {
         children: [
           Image(
             width: THelperFunctions.screenWidth() * 0.8,
-            height: THelperFunctions.screenHeight() * 0.8,
+            height: THelperFunctions.screenHeight() * 0.6,
             image: AssetImage(image),
           ),
           Text(
