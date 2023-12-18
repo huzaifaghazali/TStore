@@ -59,7 +59,7 @@ class TLoginForm extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: TSizes.spaceBtwItems),
+            const SizedBox(height: TSizes.spaceBtwSections),
 
             /// Sign In Button
             SizedBox(
