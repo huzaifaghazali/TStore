@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/styles/spacing_style.dart';
+import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
@@ -13,13 +14,14 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: TSpacingStyle.paddingWithAppBarHeight,
           child: Column(
             children: [
-              // Logo, Title & Sub-title
+              /// Logo, Title & Sub-title
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -29,7 +31,7 @@ class LoginScreen extends StatelessWidget {
                         dark ? TImages.lightAppLogo : TImages.darkAppLogo),
                   ),
                   Text(TTexts.loginTitle,
-                      style: Theme.of(context).textTheme.bodyMedium),
+                      style: Theme.of(context).textTheme.headlineMedium),
                   const SizedBox(height: TSizes.sm),
                   Text(TTexts.loginSubTitle,
                       style: Theme.of(context).textTheme.bodyMedium),
@@ -43,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      // Email
+                      /// Email
                       TextFormField(
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Iconsax.direct_right),
@@ -53,7 +55,7 @@ class LoginScreen extends StatelessWidget {
 
                       const SizedBox(height: TSizes.spaceBtwInputFields),
 
-                      // Password
+                      /// Password
                       TextFormField(
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Iconsax.password_check),
@@ -64,11 +66,11 @@ class LoginScreen extends StatelessWidget {
 
                       const SizedBox(height: TSizes.spaceBtwInputFields / 2),
 
-                      // Remember me  Forget Password
+                      /// Remember me  Forget Password
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // Remember Me
+                          /// Remember Me
                           Row(
                             children: [
                               Checkbox(value: true, onChanged: (value) {}),
@@ -76,7 +78,7 @@ class LoginScreen extends StatelessWidget {
                             ],
                           ),
 
-                          // Forget Password
+                          /// Forget Password
                           TextButton(
                             onPressed: () {},
                             child: const Text(TTexts.forgetPassword),
@@ -84,9 +86,9 @@ class LoginScreen extends StatelessWidget {
                         ],
                       ),
 
-                      const SizedBox(height: TSizes.spaceBtwSections),
+                      const SizedBox(height: TSizes.spaceBtwItems),
 
-                      // Sign In Button
+                      /// Sign In Button
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
@@ -96,7 +98,8 @@ class LoginScreen extends StatelessWidget {
                       ),
 
                       const SizedBox(height: TSizes.spaceBtwItems),
-                      // Create Account Button
+
+                      /// Create Account Button
                       SizedBox(
                         width: double.infinity,
                         child: OutlinedButton(
@@ -104,15 +107,72 @@ class LoginScreen extends StatelessWidget {
                           child: const Text(TTexts.createAccount),
                         ),
                       ),
-                      const SizedBox(height: TSizes.spaceBtwSections),
                     ],
                   ),
                 ),
               ),
 
-              // Divider
+              /// Divider
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Flexible(
+                    child: Divider(
+                      color: dark ? TColors.darkGrey : TColors.grey,
+                      thickness: 0.5,
+                      indent: 60,
+                      endIndent: 5,
+                    ),
+                  ),
+                  Text(
+                    TTexts.orSignInWith,
+                    style: Theme.of(context).textTheme.labelMedium,
+                  ),
+                  Flexible(
+                      child: Divider(
+                    color: dark ? TColors.darkGrey : TColors.grey,
+                    thickness: 0.5,
+                    indent: 5,
+                    endIndent: 60,
+                  )),
+                ],
+              ),
 
-              // Footer
+              const SizedBox(height: TSizes.spaceBtwItems),
+
+              /// Footer
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(color: TColors.grey),
+                        borderRadius: BorderRadius.circular(100)),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Image(
+                        width: TSizes.iconMd,
+                        height: TSizes.iconMd,
+                        image: AssetImage(TImages.google),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: TSizes.spaceBtwItems),
+                  Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(color: TColors.grey),
+                        borderRadius: BorderRadius.circular(100)),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Image(
+                        width: TSizes.iconMd,
+                        height: TSizes.iconMd,
+                        image: AssetImage(TImages.facebook),
+                      ),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),
