@@ -41,11 +41,37 @@ class SignupScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const SizedBox(height: TSizes.spaceBtwInputFields),
 
                     /// Username
+                    TextFormField(
+                      expands: false,
+                      decoration: const InputDecoration(labelText: TTexts.username, prefixIcon: Icon(Iconsax.user_edit)),
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwInputFields),
+
                     /// Email
+                    TextFormField(
+                      decoration: const InputDecoration(labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct)),
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwInputFields),
+
                     /// Phone Number
+                    TextFormField(
+                      decoration: const InputDecoration(labelText: TTexts.phoneNo, prefixIcon: Icon(Iconsax.call)),
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwInputFields),
+
                     /// Password
+                    TextFormField(
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                          labelText: TTexts.password,
+                          prefixIcon: Icon(Iconsax.call),
+                          suffixIcon: Icon(Iconsax.eye_slash),
+                      ),
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwInputFields),
 
                     /// Terms & Condition checkbox
 
