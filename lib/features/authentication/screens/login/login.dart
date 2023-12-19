@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
               /// Logo, Title & Sub-title
               const TLoginHeader(),
 
-              // Form
+              /// Form
               const TLoginForm(),
 
               /// Divider
