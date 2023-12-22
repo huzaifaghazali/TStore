@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/utils/constants/colors.dart';
 
+import '../../../../common/widgets/custom_shapes/containers/circular_container.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -15,24 +17,8 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(0),
               child: Stack(
                 children: [
-                  Container(
-                    width: 400,
-                    height: 400,
-                    padding: const EdgeInsets.all(0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(400),
-                      color: TColors.textWhite.withOpacity(0.1),
-                    ),
-                  ),
-                  Container(
-                    width: 400,
-                    height: 400,
-                    padding: const EdgeInsets.all(0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(400),
-                      color: TColors.textWhite.withOpacity(0.1),
-                    ),
-                  ),
+                   TCircularContainer(backgroundColor: TColors.textWhite.withOpacity(0.1)),
+                   TCircularContainer(backgroundColor: TColors.textWhite.withOpacity(0.1)),
                 ],
               ),
             )
@@ -42,3 +28,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
