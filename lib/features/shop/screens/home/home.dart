@@ -3,17 +3,16 @@ import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/curved_shapes/curved_edges.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:t_store/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:t_store/utils/constants/colors.dart';
+import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
 import 'package:t_store/utils/device/device_utility.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
-import '../../../../common/widgets/custom_shapes/containers/circular_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
-import '../../../../common/widgets/custom_shapes/curved_shapes/curved_edges_widget.dart';
-import '../../../../common/widgets/products_cart/cart_menu_icon.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -42,8 +41,12 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: TSizes.defaultSpace),
                     child: Column(
                       children: [
-                        TSectionHeading(title: 'Popular Categories', showActionButton: false),
+                        /// Heading
+                        const TSectionHeading(title: 'Popular Categories', showActionButton: false, textColor: Colors.white,),
                         const SizedBox(height: TSizes.spaceBtwItems),
+
+                        /// Categories
+                        const THomeCategories(),
                       ],
                     ),
                   )
