@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/curved_shapes/curved_edges.dart';
 import 'package:t_store/utils/constants/colors.dart';
+import 'package:t_store/utils/constants/text_strings.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/circular_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
@@ -11,13 +13,23 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             TPrimaryHeaderContainer(
               child: Column(
-                children: [],
+                children: [
+                  TAppBar(
+                    title: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(TTexts.homeAppbarTitle, style: Theme.of(context).textTheme.labelMedium!.apply(color: TColors.grey)),
+                        Text(TTexts.homeAppbarSubTitle, style: Theme.of(context).textTheme.headlineSmall!.apply(color: TColors.white)),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             )
           ],
