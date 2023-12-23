@@ -7,9 +7,11 @@ import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
 import 'package:t_store/utils/device/device_utility.dart';
+import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/circular_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
+import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/custom_shapes/curved_shapes/curved_edges_widget.dart';
 import '../../../../common/widgets/products_cart/cart_menu_icon.dart';
 
@@ -18,7 +20,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -27,31 +29,13 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   /// Appbar
-                  const THomeAppBar(),
-                  const SizedBox(height: TSizes.spaceBtwSections),
+                  THomeAppBar(),
+                  SizedBox(height: TSizes.spaceBtwSections),
 
                   /// SearchBar
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
-                    child: Container(
-                      width: TDeviceUtils.getScreenWidth(context),
-                      padding: const EdgeInsets.all(TSizes.md),
-                      decoration: BoxDecoration(
-                        color: TColors.white,
-                        borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
-                        border: Border.all(color: TColors.grey)
-                      ),
-                      child: Row(
-                        children: [
-                          const Icon(Iconsax.search_normal, color: TColors.darkerGrey),
-                          const SizedBox(width: TSizes.spaceBtwItems),
-                          Text('Search in Store', style: Theme.of(context).textTheme.bodySmall!.apply(color: TColors.darkerGrey.withOpacity(0.5))),
-                        ],
-                      ),
+                  TSearchContainer(text: 'Search in Store'),
+                  SizedBox(height: TSizes.spaceBtwSections),
 
-                    ),
-                  )
-                  
                   ///  Categories
                 ],
               ),
