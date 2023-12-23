@@ -14,13 +14,14 @@ import '../../../../common/widgets/custom_shapes/containers/primary_header_conta
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/custom_shapes/curved_shapes/curved_edges_widget.dart';
 import '../../../../common/widgets/products_cart/cart_menu_icon.dart';
+import '../../../../common/widgets/texts/section_heading.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -29,14 +30,23 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   /// Appbar
-                  THomeAppBar(),
-                  SizedBox(height: TSizes.spaceBtwSections),
+                  const THomeAppBar(),
+                  const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// SearchBar
-                  TSearchContainer(text: 'Search in Store'),
-                  SizedBox(height: TSizes.spaceBtwSections),
+                  const TSearchContainer(text: 'Search in Store'),
+                  const SizedBox(height: TSizes.spaceBtwSections),
 
                   ///  Categories
+                  Padding(
+                    padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+                    child: Column(
+                      children: [
+                        TSectionHeading(title: 'Popular Categories', showActionButton: false),
+                        const SizedBox(height: TSizes.spaceBtwItems),
+                      ],
+                    ),
+                  )
                 ],
               ),
             )
@@ -46,3 +56,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
