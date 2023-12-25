@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
+import 'package:t_store/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:t_store/common/widgets/custom_shapes/curved_shapes/curved_edges.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_categories.dart';
@@ -59,15 +60,25 @@ class HomeScreen extends StatelessWidget {
             /// Body
             Padding(
               padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  viewportFraction: 1,
-
-                ),
-                items: const [
-                  TRoundedImage(imageUrl: TImages.promoBanner1),
-                  TRoundedImage(imageUrl: TImages.promoBanner2),
-                  TRoundedImage(imageUrl: TImages.promoBanner3),
+              child: Column(
+                children: [
+                  CarouselSlider(
+                    options: CarouselOptions(
+                      viewportFraction: 1,
+                    ),
+                    items: const [
+                      TRoundedImage(imageUrl: TImages.promoBanner1),
+                      TRoundedImage(imageUrl: TImages.promoBanner2),
+                      TRoundedImage(imageUrl: TImages.promoBanner3),
+                    ],
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      for (int i = 0; i < 3; i++)  const TCircularContainer( width: 20, height: 4, margin: EdgeInsets.only(right: 10), backgroundColor: Colors.green ),
+                    ],
+                  )
                 ],
               ),
             ),
