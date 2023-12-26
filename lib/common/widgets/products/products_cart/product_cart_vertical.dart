@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/common/widgets/images/t_rounded_image.dart';
 import 'package:t_store/utils/constants/colors.dart';
@@ -7,6 +8,7 @@ import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../styles/shadows.dart';
+import '../../icons/t_circular_icon.dart';
 
 class TProductCartVertical extends StatelessWidget {
   const TProductCartVertical({super.key});
@@ -44,6 +46,13 @@ class TProductCartVertical extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
                     child: Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black)),
                   ),
+                ),
+
+                /// Favourite Icon Button
+                const Positioned(
+                  top: 0,
+                  right: 0,
+                  child: TCircularIcon(icon: Iconsax.heart5, color: Colors.red),
                 )
               ],
             ),
