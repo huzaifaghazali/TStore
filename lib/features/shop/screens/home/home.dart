@@ -21,12 +21,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// Header
-            TPrimaryHeaderContainer(
+            const TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   /// Appbar
@@ -43,7 +43,11 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         /// Heading
-                        TSectionHeading(title: 'Popular Categories', showActionButton: false, textColor: Colors.white,),
+                        TSectionHeading(
+                          title: 'Popular Categories',
+                          showActionButton: false,
+                          textColor: Colors.white,
+                        ),
                         SizedBox(height: TSizes.spaceBtwItems),
 
                         /// Categories
@@ -57,16 +61,31 @@ class HomeScreen extends StatelessWidget {
 
             /// Body
             Padding(
-              padding: EdgeInsets.all(TSizes.defaultSpace),
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
                 children: [
                   /// Promo Slider
-                  TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3]),
-                  SizedBox(height: TSizes.spaceBtwSections),
+                  const TPromoSlider(banners: [
+                    TImages.promoBanner1,
+                    TImages.promoBanner2,
+                    TImages.promoBanner3
+                  ]),
+                  const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// Popular Products
-                  TProductCartVertical(),
-
+                  GridView.builder(
+                    itemCount: 4,
+                    shrinkWrap: true,
+                    padding: EdgeInsets.zero,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: TSizes.gridViewSpacing,
+                      crossAxisSpacing: TSizes.gridViewSpacing,
+                      mainAxisExtent: 288,
+                    ),
+                    itemBuilder: (_, index) =>  const TProductCartVertical()
+                  ),
                 ],
               ),
             ),
