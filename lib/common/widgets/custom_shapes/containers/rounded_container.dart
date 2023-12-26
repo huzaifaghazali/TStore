@@ -3,8 +3,8 @@ import 'package:t_store/utils/constants/sizes.dart';
 
 import '../../../../utils/constants/colors.dart';
 
-class TCircularContainer extends StatelessWidget {
-  const TCircularContainer({
+class TRoundedContainer extends StatelessWidget {
+  const TRoundedContainer({
     super.key,
     this.child,
     this.width,

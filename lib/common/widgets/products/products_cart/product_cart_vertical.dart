@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:t_store/common/widgets/images/t_rounded_image.dart';
 import 'package:t_store/utils/constants/colors.dart';
+import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
@@ -23,7 +26,28 @@ class TProductCartVertical extends StatelessWidget {
       child: Column(
         children: [
           /// Thumbnail, Wishlist Button, Discount Tag
-          
+          TRoundedContainer(
+            height: 180,
+            padding: const EdgeInsets.all(TSizes.sm),
+            backgroundColor: dark ? TColors.dark : TColors.light,
+            child: Stack(
+              children: [
+                /// Thumbnail image
+                const TRoundedImage(imageUrl: TImages.productImage1, applyImageRadius: true),
+
+                /// Sale Tag
+                Positioned(
+                  top: 12,
+                  child: TRoundedContainer(
+                    radius: TSizes.sm,
+                    backgroundColor: TColors.secondary.withOpacity(0.8),
+                    padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
+                    child: Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black)),
+                  ),
+                )
+              ],
+            ),
+          )
           /// -- Details
         ],
       ),
