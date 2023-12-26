@@ -9,6 +9,7 @@ import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../styles/shadows.dart';
 import '../../icons/t_circular_icon.dart';
+import '../../texts/product_title_text.dart';
 
 class TProductCartVertical extends StatelessWidget {
   const TProductCartVertical({super.key});
@@ -53,11 +54,23 @@ class TProductCartVertical extends StatelessWidget {
                   top: 0,
                   right: 0,
                   child: TCircularIcon(icon: Iconsax.heart5, color: Colors.red),
-                )
+                ),
               ],
             ),
-          )
+          ),
+          const SizedBox(height: TSizes.spaceBtwItems / 2),
+
           /// -- Details
+         const Padding(
+            padding: EdgeInsets.only(left: TSizes.sm),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TProductTitleText(title: 'Green Nike Air Shoes', smallSize: true),
+                SizedBox(height: TSizes.spaceBtwItems / 2),
+              ],
+            ),
+          ),
         ],
       ),
     );
