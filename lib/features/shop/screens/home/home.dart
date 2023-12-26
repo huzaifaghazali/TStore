@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/products/products_cart/product_cart_vertical.dart';
@@ -12,6 +11,7 @@ import 'package:t_store/utils/constants/text_strings.dart';
 import 'package:t_store/utils/device/device_utility.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
+import '../../../../common/widgets/Layouts/grid_layout.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
@@ -73,19 +73,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// Popular Products
-                  GridView.builder(
-                    itemCount: 4,
-                    shrinkWrap: true,
-                    padding: EdgeInsets.zero,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: TSizes.gridViewSpacing,
-                      crossAxisSpacing: TSizes.gridViewSpacing,
-                      mainAxisExtent: 288,
-                    ),
-                    itemBuilder: (_, index) =>  const TProductCartVertical()
-                  ),
+                  TGridLayout(itemCount: 4, itemBuilder: (_, index) => const TProductCartVertical()),
                 ],
               ),
             ),
@@ -95,3 +83,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+

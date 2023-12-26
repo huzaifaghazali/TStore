@@ -9,6 +9,7 @@ import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../styles/shadows.dart';
 import '../../icons/t_circular_icon.dart';
+import '../../texts/product_price_text.dart';
 import '../../texts/product_title_text.dart';
 
 class TProductCartVertical extends StatelessWidget {
@@ -81,12 +82,9 @@ class TProductCartVertical extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       /// Price
-                      Text(
-                        '\$35.5',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
+                      const TProductPriceText(price: '35.0', isLarge: true),
+
+                      /// Add to cart Button
                       Container(
                         decoration: const BoxDecoration(
                           color: TColors.dark,
@@ -113,3 +111,4 @@ class TProductCartVertical extends StatelessWidget {
     );
   }
 }
+
