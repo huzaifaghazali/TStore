@@ -64,6 +64,13 @@ class StoreScreen extends StatelessWidget {
                           overLayColor: dark ? TColors.white : TColors.black,
                         ),
                         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
+
+                        /// -- Text
+                        Column(
+                          children: [
+
+                          ],
+                        )
                       ],
                     ),
                   )
