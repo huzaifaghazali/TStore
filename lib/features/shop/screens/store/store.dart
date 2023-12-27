@@ -9,6 +9,8 @@ import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
+import '../../../../common/widgets/images/t_circular_image.dart';
+
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
 
@@ -55,19 +57,13 @@ class StoreScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         /// -- Icon
-                        Container(
-                          width: 56,
-                          height: 56,
-                          padding: const EdgeInsets.all(TSizes.sm),
-                          decoration: BoxDecoration(
-                            color: dark ? TColors.black : TColors.white,
-                            borderRadius: BorderRadius.circular(100),
-                          ),
-                          child: Image(
-                            image: const AssetImage(TImages.clothIcon),
-                            color: dark ? TColors.white : TColors.dark,
-                          ),
+                        TCircularImage(
+                          isNetworkImage: false,
+                          image: TImages.clothIcon,
+                          backgroundColor: Colors.transparent,
+                          overLayColor: dark ? TColors.white : TColors.black,
                         ),
+                        const SizedBox(height: TSizes.spaceBtwItems / 1.5),
                       ],
                     ),
                   )
@@ -81,3 +77,5 @@ class StoreScreen extends StatelessWidget {
     );
   }
 }
+
+
