@@ -11,6 +11,7 @@ import '../../../styles/shadows.dart';
 import '../../icons/t_circular_icon.dart';
 import '../../texts/product_price_text.dart';
 import '../../texts/product_title_text.dart';
+import '../../texts/t_brand_title_text_with_verfied_icon.dart';
 
 class TProductCartVertical extends StatelessWidget {
   const TProductCartVertical({super.key});
@@ -71,7 +72,7 @@ class TProductCartVertical extends StatelessWidget {
                 children: [
                   TProductTitleText(title: 'Green Nike Air Shoes', smallSize: true),
                   SizedBox(height: TSizes.spaceBtwItems / 2),
-                  TBrandTitleWithVerifiedIcon(),
+                  TBrandTitleWithVerifiedIcon(title: 'Nike'),
                 ],
               ),
             ),
