@@ -59,7 +59,7 @@ class StoreScreen extends StatelessWidget {
       
                     ///  Grid Brands
                    TGridLayout(itemCount: 4, mainAxisExtent: 80, itemBuilder: (_, index) {
-                     return  const TBrandCard(showBorder: false);
+                     return  const TBrandCard(showBorder: true);
                    })
       
                   ],
@@ -81,7 +81,67 @@ class StoreScreen extends StatelessWidget {
           ];
         },
         /// Body of TabBar
-        body: Container()),
+          body: TabBarView(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    /// Brands
+                    TRoundedContainer(
+                      showBorder: true,
+                      borderColor: TColors.darkerGrey,
+                      backgroundColor: Colors.transparent,
+                      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
+                      padding: const EdgeInsets.all(TSizes.md),
+                      child: Column(
+                        children: [
+                          /// Brand with Product Count
+                          const TBrandCard(showBorder: false),
+
+                          /// Brand Top 3 Product Images
+                          Row(
+                            children: [
+                              Expanded(
+                                child: TRoundedContainer(
+                                  height: 100,
+                                  backgroundColor: dark ? TColors.darkerGrey : TColors.light,
+                                  margin: const EdgeInsets.only(right: TSizes.sm),
+                                  padding: const EdgeInsets.all(TSizes.md),
+                                  child: const Image(fit: BoxFit.contain, image: AssetImage(TImages.productImage3)),
+                                ),
+                              ),
+                              Expanded(
+                                child: TRoundedContainer(
+                                  height: 100,
+                                  backgroundColor: dark ? TColors.darkerGrey : TColors.light,
+                                  margin: const EdgeInsets.only(right: TSizes.sm),
+                                  padding: const EdgeInsets.all(TSizes.md),
+                                  child: const Image(fit: BoxFit.contain, image: AssetImage(TImages.productImage3)),
+                                ),
+                              ),
+                              Expanded(
+                                child: TRoundedContainer(
+                                  height: 100,
+                                  backgroundColor: dark ? TColors.darkerGrey : TColors.light,
+                                  margin: const EdgeInsets.only(right: TSizes.sm),
+                                  padding: const EdgeInsets.all(TSizes.md),
+                                  child: const Image(fit: BoxFit.contain, image: AssetImage(TImages.productImage3)),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    )
+
+                    /// Products
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
