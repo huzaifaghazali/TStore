@@ -11,6 +11,7 @@ import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
+import '../../../../common/widgets/brands/t_brand_card.dart';
 import '../../../../common/widgets/images/t_circular_image.dart';
 import '../../../../common/widgets/texts/t_brand_title_text_with_verfied_icon.dart';
 
@@ -21,6 +22,7 @@ class StoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
+      /// App bar
       appBar: TAppBar(
         title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
         actions: [
@@ -52,46 +54,9 @@ class StoreScreen extends StatelessWidget {
                   TSectionHeading(title: 'Featured Brands', onPressed: (){}),
                   const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
-                  ///  Featured Brands
+                  ///  Grid Brands
                  TGridLayout(itemCount: 4, mainAxisExtent: 80, itemBuilder: (_, index) {
-                   return  GestureDetector(
-                     onTap: (){},
-                     child: TRoundedContainer(
-                       padding: const EdgeInsets.all(TSizes.sm),
-                       showBorder: true,
-                       backgroundColor: Colors.transparent,
-                       child: Row(
-                         children: [
-                           /// -- Icon
-                           Flexible(
-                             child: TCircularImage(
-                               isNetworkImage: false,
-                               image: TImages.clothIcon,
-                               backgroundColor: Colors.transparent,
-                               overLayColor: dark ? TColors.white : TColors.black,
-                             ),
-                             ),
-                           const SizedBox(height: TSizes.spaceBtwItems / 2),
-
-                           /// -- Text
-                           Expanded(
-                             child: Column(
-                               mainAxisSize: MainAxisSize.min,
-                               crossAxisAlignment: CrossAxisAlignment.start,
-                               children: [
-                                 const TBrandTitleWithVerifiedIcon(title: 'Nike', brandTextSize: TextSizes.large),
-                                 Text(
-                                   '256 products',
-                                   overflow: TextOverflow.ellipsis,
-                                   style: Theme.of(context).textTheme.labelMedium,
-                                 )
-                               ],
-                             ),
-                           )
-                         ],
-                       ),
-                     ),
-                   );
+                   return  const TBrandCard(showBorder: false);
                  })
 
                 ],
@@ -103,5 +68,6 @@ class StoreScreen extends StatelessWidget {
     );
   }
 }
+
 
 
