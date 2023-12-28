@@ -21,50 +21,70 @@ class StoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-    return Scaffold(
-      /// App bar
-      appBar: TAppBar(
-        title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
-        actions: [
-          TCartCounterIcon(onPressed: (){})
-        ],
-      ),
-      /// Body
-      body: NestedScrollView(headerSliverBuilder: (_, innerBoxIsScrolled) {
-        return [
-          SliverAppBar(
-            automaticallyImplyLeading: false,
-            pinned: true,
-            floating: true,
-            backgroundColor: dark ? TColors.black : TColors.white,
-            expandedHeight: 440,
-
-            flexibleSpace: Padding(
-              padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: ListView(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                children: [
-                  /// Search bar
-                  const SizedBox(height: TSizes.spaceBtwItems),
-                  const TSearchContainer(text: 'Search in Store', showBorder: true, showBackground: false, padding: EdgeInsets.zero),
-                  const SizedBox(height: TSizes.spaceBtwItems),
-
-                  /// Heading
-                  TSectionHeading(title: 'Featured Brands', onPressed: (){}),
-                  const SizedBox(height: TSizes.spaceBtwItems / 1.5),
-
-                  ///  Grid Brands
-                 TGridLayout(itemCount: 4, mainAxisExtent: 80, itemBuilder: (_, index) {
-                   return  const TBrandCard(showBorder: false);
-                 })
-
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+        /// App bar
+        appBar: TAppBar(
+          title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
+          actions: [
+            TCartCounterIcon(onPressed: (){})
+          ],
+        ),
+        /// Body
+        body: NestedScrollView(headerSliverBuilder: (_, innerBoxIsScrolled) {
+          return [
+            SliverAppBar(
+              automaticallyImplyLeading: false,
+              pinned: true,
+              floating: true,
+              backgroundColor: dark ? TColors.black : TColors.white,
+              expandedHeight: 440,
+      
+              flexibleSpace: Padding(
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                child: ListView(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: [
+                    /// Search bar
+                    const SizedBox(height: TSizes.spaceBtwItems),
+                    const TSearchContainer(text: 'Search in Store', showBorder: true, showBackground: false, padding: EdgeInsets.zero),
+                    const SizedBox(height: TSizes.spaceBtwItems),
+      
+                    /// Heading
+                    TSectionHeading(title: 'Featured Brands', onPressed: (){}),
+                    const SizedBox(height: TSizes.spaceBtwItems / 1.5),
+      
+                    ///  Grid Brands
+                   TGridLayout(itemCount: 4, mainAxisExtent: 80, itemBuilder: (_, index) {
+                     return  const TBrandCard(showBorder: false);
+                   })
+      
+                  ],
+                ),
+              ),
+      
+              /// Tabs
+              bottom: TabBar(
+                isScrollable: true,
+                indicatorColor: TColors.primary,
+                unselectedLabelColor: TColors.darkerGrey,
+                labelColor: dark ? TColors.white : TColors.primary,
+                tabs: const [
+                  Tab(child: Text('Sports')),
+                  Tab(child: Text('Furniture')),
+                  Tab(child: Text('Electronics')),
+                  Tab(child: Text('Clothes')),
+                  Tab(child: Text('Cosmetics')),
                 ],
               ),
             ),
-          ),
-        ];
-      }, body: Container()),
+          ];
+        },
+        /// Body
+        body: Container()),
+      ),
     );
   }
 }
