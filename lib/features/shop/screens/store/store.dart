@@ -6,12 +6,14 @@ import 'package:t_store/common/widgets/custom_shapes/containers/rounded_containe
 import 'package:t_store/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:t_store/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/enums.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
+import '../../../../common/widgets/brands/brand_show_case.dart';
 import '../../../../common/widgets/brands/t_brand_card.dart';
 import '../../../../common/widgets/images/t_circular_image.dart';
 import '../../../../common/widgets/texts/t_brand_title_text_with_verfied_icon.dart';
@@ -61,7 +63,6 @@ class StoreScreen extends StatelessWidget {
                    TGridLayout(itemCount: 4, mainAxisExtent: 80, itemBuilder: (_, index) {
                      return  const TBrandCard(showBorder: true);
                    })
-      
                   ],
                 ),
               ),
@@ -75,70 +76,20 @@ class StoreScreen extends StatelessWidget {
                   Tab(child: Text('Clothes')),
                   Tab(child: Text('Cosmetics')),
                 ],
-
               ),
             ),
           ];
         },
+
         /// Body of TabBar
-          body: TabBarView(
+          body: const TabBarView(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(
-                  children: [
-                    /// Brands
-                    TRoundedContainer(
-                      showBorder: true,
-                      borderColor: TColors.darkerGrey,
-                      backgroundColor: Colors.transparent,
-                      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
-                      padding: const EdgeInsets.all(TSizes.md),
-                      child: Column(
-                        children: [
-                          /// Brand with Product Count
-                          const TBrandCard(showBorder: false),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
 
-                          /// Brand Top 3 Product Images
-                          Row(
-                            children: [
-                              Expanded(
-                                child: TRoundedContainer(
-                                  height: 100,
-                                  backgroundColor: dark ? TColors.darkerGrey : TColors.light,
-                                  margin: const EdgeInsets.only(right: TSizes.sm),
-                                  padding: const EdgeInsets.all(TSizes.md),
-                                  child: const Image(fit: BoxFit.contain, image: AssetImage(TImages.productImage3)),
-                                ),
-                              ),
-                              Expanded(
-                                child: TRoundedContainer(
-                                  height: 100,
-                                  backgroundColor: dark ? TColors.darkerGrey : TColors.light,
-                                  margin: const EdgeInsets.only(right: TSizes.sm),
-                                  padding: const EdgeInsets.all(TSizes.md),
-                                  child: const Image(fit: BoxFit.contain, image: AssetImage(TImages.productImage3)),
-                                ),
-                              ),
-                              Expanded(
-                                child: TRoundedContainer(
-                                  height: 100,
-                                  backgroundColor: dark ? TColors.darkerGrey : TColors.light,
-                                  margin: const EdgeInsets.only(right: TSizes.sm),
-                                  padding: const EdgeInsets.all(TSizes.md),
-                                  child: const Image(fit: BoxFit.contain, image: AssetImage(TImages.productImage3)),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    )
-
-                    /// Products
-                  ],
-                ),
-              )
             ],
           ),
         ),
@@ -146,6 +97,5 @@ class StoreScreen extends StatelessWidget {
     );
   }
 }
-
 
 
