@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/common/widgets/Layouts/grid_layout.dart';
+import 'package:t_store/common/widgets/products/products_cart/product_cart_vertical.dart';
+import 'package:t_store/common/widgets/texts/section_heading.dart';
 
 import '../../../../../common/widgets/brands/brand_show_case.dart';
 import '../../../../../utils/constants/image_strings.dart';
@@ -9,16 +12,29 @@ class TCategoryTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Padding(
-      padding: EdgeInsets.all(TSizes.defaultSpace),
-      child: Column(
-        children: [
-          /// Brands
-          TBrandShowcase(images: [TImages.productImage3, TImages.productImage2, TImages.productImage1])
+    return  ListView(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          child: Column(
+            children: [
+              /// Brands
+              const TBrandShowcase(images: [TImages.productImage3, TImages.productImage2, TImages.productImage1]),
+              const TBrandShowcase(images: [TImages.productImage3, TImages.productImage2, TImages.productImage1]),
+              const SizedBox(height: TSizes.spaceBtwItems),
 
-          /// Products
-        ],
-      ),
+              /// Products
+              TSectionHeading(title: 'Your might like', onPressed: (){}),
+              const SizedBox(height: TSizes.spaceBtwItems),
+
+              TGridLayout(itemCount: 4, itemBuilder: (_, index) => const TProductCartVertical()),
+              const SizedBox(height: TSizes.spaceBtwSections),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
