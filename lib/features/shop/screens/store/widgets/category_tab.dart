@@ -29,7 +29,7 @@ class TCategoryTab extends StatelessWidget {
               TSectionHeading(title: 'Your might like', onPressed: (){}),
               const SizedBox(height: TSizes.spaceBtwItems),
 
-              TGridLayout(itemCount: 4, itemBuilder: (_, index) => const TProductCartVertical()),
+              TGridLayout(itemCount: 4, itemBuilder: (_, index) => const TProductCardVertical()),
               const SizedBox(height: TSizes.spaceBtwSections),
             ],
           ),
