@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/products/products_cart/product_cart_vertical.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:t_store/features/shop/screens/home/widgets/promo_slider.dart';
-import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/constants/text_strings.dart';
-import 'package:t_store/utils/device/device_utility.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../../common/widgets/Layouts/grid_layout.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
@@ -54,7 +49,8 @@ class HomeScreen extends StatelessWidget {
                         THomeCategories(),
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(height: TSizes.spaceBtwSections),
                 ],
               ),
             ),
