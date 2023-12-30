@@ -34,25 +34,25 @@ class SettingsScreen extends StatelessWidget {
             ),
             /// Body
             Padding(
-              padding: EdgeInsets.all(TSizes.defaultSpace),
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
                 children: [
                   /// Account Settings
-                  TSectionHeading(title: 'Account Settings', showActionButton: false),
-                  SizedBox(height: TSizes.spaceBtwItems),
+                  const TSectionHeading(title: 'Account Settings', showActionButton: false),
+                  const SizedBox(height: TSizes.spaceBtwItems),
 
-                  TSettingsMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subTitle: 'Set shopping delivery address'),
-                  TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, remove product and move to checkout'),
-                  TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'Withdraw balance to register bank account'),
-                  TSettingsMenuTile(icon: Iconsax.bank, title: 'Band Account', subTitle: 'Set shopping delivery address'),
-                  TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons'),
-                  TSettingsMenuTile(icon: Iconsax.notification, title: 'Notification', subTitle: 'Set any kind of notification message'),
-                  TSettingsMenuTile(icon: Iconsax.security_card, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts'),
+                  const TSettingsMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subTitle: 'Set shopping delivery address'),
+                  const TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, remove product and move to checkout'),
+                  const TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'Withdraw balance to register bank account'),
+                  const TSettingsMenuTile(icon: Iconsax.bank, title: 'Band Account', subTitle: 'Set shopping delivery address'),
+                  const TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons'),
+                  const TSettingsMenuTile(icon: Iconsax.notification, title: 'Notification', subTitle: 'Set any kind of notification message'),
+                  const TSettingsMenuTile(icon: Iconsax.security_card, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts'),
 
                   /// App Settings
-                  SizedBox(height: TSizes.spaceBtwSections),
-                  TSectionHeading(title: 'App Settings', showActionButton: false),
-                  SizedBox(height: TSizes.spaceBtwItems),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+                  const TSectionHeading(title: 'App Settings', showActionButton: false),
+                  const SizedBox(height: TSizes.spaceBtwItems),
                   TSettingsMenuTile(
                     icon: Iconsax.bank,
                     title: 'Geolocation',
@@ -71,6 +71,14 @@ class SettingsScreen extends StatelessWidget {
                     subTitle: 'Set image quality to be seen',
                     trailing: Switch(value: false, onChanged: (value) {}),
                   ),
+
+                  /// Logout Button
+                  const SizedBox(height: TSizes.spaceBtwSections),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton(onPressed: (){}, child: const Text('Logout')),
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwSections * 2.5),
                 ],
               ),
             )
