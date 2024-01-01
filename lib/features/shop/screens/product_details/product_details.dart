@@ -9,6 +9,8 @@ import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
+import 'widgets/product_details_image_slider.dart';
+
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({super.key});
 
@@ -23,10 +25,10 @@ class ProductDetailScreen extends StatelessWidget {
             TCurvedEdgeWidget(
               child: Container(
                 color: dark ? TColors.darkerGrey : TColors.light,
-                child: Stack(
+                child: const Stack(
                   children: [
                     /// Main Large Image
-                    const SizedBox(
+                    SizedBox(
                       height: 400,
                       child: Padding(
                         padding: EdgeInsets.all(TSizes.productImageRadius * 2),
@@ -34,31 +36,10 @@ class ProductDetailScreen extends StatelessWidget {
                       ),
                     ),
                     /// Image Slider
-                    Positioned(
-                      right: 0,
-                      bottom: 30,
-                      left: TSizes.defaultSpace,
-                      child: SizedBox(
-                        height: 80,
-                        child: ListView.separated(
-                          separatorBuilder: (_, __) => const SizedBox(width: TSizes.spaceBtwItems),
-                          itemCount: 6,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          physics: const AlwaysScrollableScrollPhysics(),
-                          itemBuilder: (_, index) => TRoundedImage(
-                            width: 80,
-                            backgroundColor: dark ? TColors.dark : TColors.white,
-                            border: Border.all(color: TColors.primary),
-                            padding: const EdgeInsets.all(TSizes.sm),
-                            imageUrl: TImages.productImage3,
-                          ),
-                        ),
-                      ),
-                    ),
+                    TProductImageSlider(),
 
                     /// AppBar
-                    const TAppBar(
+                    TAppBar(
                       showBackArrow: true,
                       actions: [
                         TCircularIcon(icon: Iconsax.heart5,color: Colors.red)
@@ -78,3 +59,4 @@ class ProductDetailScreen extends StatelessWidget {
     );
   }
 }
+
