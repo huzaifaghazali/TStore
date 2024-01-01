@@ -17,40 +17,12 @@ class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// Product Image slider
-            TCurvedEdgeWidget(
-              child: Container(
-                color: dark ? TColors.darkerGrey : TColors.light,
-                child: const Stack(
-                  children: [
-                    /// Main Large Image
-                    SizedBox(
-                      height: 400,
-                      child: Padding(
-                        padding: EdgeInsets.all(TSizes.productImageRadius * 2),
-                        child: Center(child: Image(image: AssetImage(TImages.productImage5))),
-                      ),
-                    ),
-                    /// Image Slider
-                    TProductImageSlider(),
-
-                    /// AppBar
-                    TAppBar(
-                      showBackArrow: true,
-                      actions: [
-                        TCircularIcon(icon: Iconsax.heart5,color: Colors.red)
-                      ],
-                    )
-
-
-                  ],
-                ),
-              ),
-            )
+            TProductImageSlider(),
 
             /// Product Details
           ],
