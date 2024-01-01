@@ -4,6 +4,7 @@ import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/curved_shapes/curved_edges_widget.dart';
 import 'package:t_store/common/widgets/icons/t_circular_icon.dart';
 import 'package:t_store/common/widgets/images/t_rounded_image.dart';
+import 'package:t_store/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -18,21 +19,24 @@ class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// Product Image slider
-            const TProductImageSlider(),
+            TProductImageSlider(),
 
             /// Product Details
             Padding(
-              padding: const EdgeInsets.only(right: TSizes.defaultSpace, left:  TSizes.defaultSpace, bottom:  TSizes.defaultSpace),
+              padding: EdgeInsets.only(right: TSizes.defaultSpace, left:  TSizes.defaultSpace, bottom:  TSizes.defaultSpace),
               child: Column(
                 children: [
                   /// Rating & Share Button
-                  TRatingAndShare()
+                  TRatingAndShare(),
+
                   /// Price, Title, Stack & Brand
+                  TProductMetaData(),
+
                   ///  Attributes
                   ///  Checkout Button
                   ///  Description
