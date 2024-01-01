@@ -10,6 +10,7 @@ import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import 'widgets/product_details_image_slider.dart';
+import 'widgets/rating_share_widget.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({super.key});
@@ -30,28 +31,7 @@ class ProductDetailScreen extends StatelessWidget {
               child: Column(
                 children: [
                   /// Rating & Share Button
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      /// Rating
-                      Row(
-                        children: [
-                          const Icon(Iconsax.star5, color: Colors.amber, size: 24),
-                          const SizedBox(width: TSizes.spaceBtwItems / 2 ),
-                          Text.rich(
-                            TextSpan(
-                              children: [
-                                TextSpan(text: '5.0', style: Theme.of(context).textTheme.bodyLarge),
-                                const TextSpan(text: '(199)'),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                      /// Share Button
-                      IconButton(onPressed: (){}, icon: const Icon(Icons.share, size: TSizes.iconMd)),
-                    ],
-                  )
+                  TRatingAndShare()
                   /// Price, Title, Stack & Brand
                   ///  Attributes
                   ///  Checkout Button
@@ -66,4 +46,3 @@ class ProductDetailScreen extends StatelessWidget {
     );
   }
 }
-
