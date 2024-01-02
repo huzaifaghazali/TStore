@@ -5,6 +5,7 @@ import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:t_store/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:t_store/utils/constants/sizes.dart';
+import 'widgets/bottom_add_to_cart_widget.dart';
 import 'widgets/product_details_image_slider.dart';
 import 'widgets/rating_share_widget.dart';
 
@@ -14,6 +15,7 @@ class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const TBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
