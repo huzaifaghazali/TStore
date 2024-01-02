@@ -29,15 +29,15 @@ class TProductAttributes extends StatelessWidget {
                   const SizedBox(width: TSizes.spaceBtwItems),
 
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
                           const TProductTitleText(title: 'Price : ', smallSize: true),
-                          const SizedBox(width: TSizes.spaceBtwItems),
 
                           /// Actual Price
                           Text('\$25', style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough)),
-                          const SizedBox(width: TSizes.spaceBtwItems),
+                           const SizedBox(width: TSizes.spaceBtwItems),
 
                           /// Sale Price
                           const TProductPriceText(price: '20')
@@ -45,12 +45,22 @@ class TProductAttributes extends StatelessWidget {
                       ),
 
                       /// Stock
+                      Row(
+                        children: [
+                          const TProductTitleText(title: 'Stock : ', smallSize: true),
+                          Text('In Stock', style: Theme.of(context).textTheme.titleMedium),
+                        ],
+                      ),
                     ],
                   ),
-
                 ],
-              )
+              ),
               /// Variation Description
+              const TProductTitleText(
+                title: 'This is the description of the Product and it can go up to max 4 lines.',
+                smallSize: true,
+                maxLines: 4,
+              )
             ],
           ),
         )
