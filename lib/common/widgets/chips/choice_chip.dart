@@ -20,7 +20,7 @@ class TChoiceChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final isColor = THelperFunctions.getColor(text) != null;
     return ChoiceChip(
-      label: isColor ? const SizedBox() : const Text(''),
+      label: isColor ? const SizedBox() : Text(text),
       selected: selected,
       onSelected: onSelected,
       labelStyle: TextStyle(color: selected ? TColors.white : null),
@@ -28,7 +28,7 @@ class TChoiceChip extends StatelessWidget {
       labelPadding: isColor  ? const EdgeInsets.all(0) : null, // Make label in the center
       padding: isColor  ? const EdgeInsets.all(0) : null,
       shape: isColor ? const CircleBorder() : null,
-      selectedColor: Colors.green,
+      // selectedColor: Colors.green,
       backgroundColor: isColor ? THelperFunctions.getColor(text)! : null,
 
     );
