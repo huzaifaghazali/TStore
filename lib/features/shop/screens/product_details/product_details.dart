@@ -10,27 +10,31 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// Product Image slider
-            TProductImageSlider(),
+            const TProductImageSlider(),
 
             /// Product Details
             Padding(
-              padding: EdgeInsets.only(right: TSizes.defaultSpace, left:  TSizes.defaultSpace, bottom:  TSizes.defaultSpace),
+              padding: const EdgeInsets.only(right: TSizes.defaultSpace, left:  TSizes.defaultSpace, bottom:  TSizes.defaultSpace),
               child: Column(
                 children: [
                   /// Rating & Share Button
-                  TRatingAndShare(),
+                  const TRatingAndShare(),
 
                   /// Price, Title, Stack & Brand
-                  TProductMetaData(),
+                  const TProductMetaData(),
 
                   ///  Attributes
-                  TProductAttributes()
+                  const TProductAttributes(),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+                  
                   ///  Checkout Button
+                  SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){}, child: const Text('Checkout'))),
+
                   ///  Description
                   ///  Reviews
                 ],
