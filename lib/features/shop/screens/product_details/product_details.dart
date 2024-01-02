@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/features/shop/screens/product_details/widgets/product_attributes.dart';
@@ -49,11 +50,20 @@ class ProductDetailScreen extends StatelessWidget {
                     trimExpandedText: ' Less',
                     moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                     lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
-
                   ),
 
-
                   ///  Reviews
+                  const Divider(),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: [
+                     const TSectionHeading(title: 'Reviews (199)', showActionButton: false),
+                     IconButton(onPressed: (){}, icon: const Icon(Iconsax.arrow_right_3, size: 18)),
+                   ],
+                 ),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+
                 ],
               ),
             )
