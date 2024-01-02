@@ -6,6 +6,7 @@ import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
+import '../../../../../common/widgets/chips/choice_chip.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
 
 class TProductAttributes extends StatelessWidget {
@@ -63,8 +64,26 @@ class TProductAttributes extends StatelessWidget {
               )
             ],
           ),
+        ),
+        const SizedBox(height: TSizes.spaceBtwItems),
+
+        /// Attributes
+        Column(
+          children: [
+            const TSectionHeading(title: 'Colors', showActionButton: false),
+            const SizedBox(height: TSizes.spaceBtwItems / 2),
+            Wrap(
+              spacing: 8,
+              children: [
+                TChoiceChip(text: 'Green', selected: true, onSelected: (value){}),
+                TChoiceChip(text: 'Blue', selected: false, onSelected: (value){}),
+                TChoiceChip(text: 'Yellow', selected: false, onSelected: (value){}),
+              ],
+            ),
+          ],
         )
       ],
     );
   }
 }
+
