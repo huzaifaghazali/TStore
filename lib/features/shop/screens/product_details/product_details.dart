@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:readmore/readmore.dart';
+import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:t_store/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -34,8 +36,23 @@ class ProductDetailScreen extends StatelessWidget {
                   
                   ///  Checkout Button
                   SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){}, child: const Text('Checkout'))),
+                  const SizedBox(height: TSizes.spaceBtwSections),
 
                   ///  Description
+                  const TSectionHeading(title: 'Description', showActionButton: false),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+                  const ReadMoreText(
+                    'This is a Product description for Blue Nike Sleeve less vest. There are more things that can be added but I am just practising and nothing else',
+                    trimLines: 2,
+                    trimMode: TrimMode.Line,
+                    trimCollapsedText: ' Show more',
+                    trimExpandedText: ' Less',
+                    moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+
+                  ),
+
+
                   ///  Reviews
                 ],
               ),
