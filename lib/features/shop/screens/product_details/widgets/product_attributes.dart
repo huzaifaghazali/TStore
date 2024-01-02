@@ -69,6 +69,7 @@ class TProductAttributes extends StatelessWidget {
 
         /// Attributes
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const TSectionHeading(title: 'Colors', showActionButton: false),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
@@ -83,6 +84,7 @@ class TProductAttributes extends StatelessWidget {
           ],
         ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const TSectionHeading(title: 'Size', showActionButton: false),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
@@ -92,11 +94,6 @@ class TProductAttributes extends StatelessWidget {
                 TChoiceChip(text: 'EU 34', selected: true, onSelected: (value){}),
                 TChoiceChip(text: 'EU 36', selected: false, onSelected: (value){}),
                 TChoiceChip(text: 'EU 38', selected: false, onSelected: (value){}),
-                TChoiceChip(text: 'EU 34', selected: true, onSelected: (value){}),
-                TChoiceChip(text: 'EU 36', selected: false, onSelected: (value){}),
-                TChoiceChip(text: 'EU 38', selected: false, onSelected: (value){}),
-                TChoiceChip(text: 'EU 34', selected: false, onSelected: (value){}),
-                TChoiceChip(text: 'EU 36', selected: true, onSelected: (value){}),
               ],
             ),
           ],
