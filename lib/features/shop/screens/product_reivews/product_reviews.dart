@@ -7,6 +7,7 @@ import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/device/device_utility.dart';
 
 
+import '../../../../common/widgets/products/ratings/rating_indicator.dart';
 import 'widgets/rating_progress_indicator.dart';
 
 class ProductReviewScreen extends StatelessWidget {
@@ -16,27 +17,24 @@ class ProductReviewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       /// Appbar
-      appBar: TAppBar(title: Text('Reviews & ratings'), showBackArrow: true),
+      appBar: const TAppBar(title: Text('Reviews & ratings'), showBackArrow: true),
 
       /// Body
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
              crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Ratings and reviews are verified and are from people who use the same type of device that you use.'),
-              SizedBox(height: TSizes.spaceBtwItems),
+              const Text('Ratings and reviews are verified and are from people who use the same type of device that you use.'),
+              const SizedBox(height: TSizes.spaceBtwItems),
 
               /// Overall Product Ratings
-              TOverallProductRating(),
+              const TOverallProductRating(),
+              const SizedBox(height: TSizes.spaceBtwItems),
 
-              RatingBarIndicator(
-                rating: 3.5,
-                itemSize: 20,
-                unratedColor: TColors.grey,
-                itemBuilder: (_, __) => const Icon(Iconsax.star1, color: TColors.primary),
-              )
+              const TRatingBarIndicator(rating: 3.5),
+
             ],
           ),
         ),
