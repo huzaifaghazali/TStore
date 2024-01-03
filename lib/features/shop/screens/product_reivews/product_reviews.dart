@@ -25,7 +25,7 @@ class ProductReviewScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
-             crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text('Ratings and reviews are verified and are from people who use the same type of device that you use.'),
               const SizedBox(height: TSizes.spaceBtwItems),
@@ -39,6 +39,7 @@ class ProductReviewScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwSections),
 
               /// User Reviews List
+              const UserReviewCard(),
               const UserReviewCard(),
             ],
           ),
