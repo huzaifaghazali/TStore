@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
+import 'package:t_store/features/shop/screens/product_reivews/widgets/user_review_card.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/device/device_utility.dart';
@@ -34,7 +35,11 @@ class ProductReviewScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwItems),
 
               const TRatingBarIndicator(rating: 3.5),
+              Text('12,611', style: Theme.of(context).textTheme.bodySmall),
+              const SizedBox(height: TSizes.spaceBtwSections),
 
+              /// User Reviews List
+              const UserReviewCard(),
             ],
           ),
         ),
