@@ -42,7 +42,12 @@ class SettingsScreen extends StatelessWidget {
                   const TSectionHeading(title: 'Account Settings', showActionButton: false),
                   const SizedBox(height: TSizes.spaceBtwItems),
 
-                  TSettingsMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subTitle: 'Set shopping delivery address', onTap: () => Get.to(() => const UserAddressScreen())),
+                  TSettingsMenuTile(
+                    icon: Iconsax.safe_home,
+                    title: 'My Addresses',
+                    subTitle: 'Set shopping delivery address',
+                    onTap: () => Get.to(() => const UserAddressScreen()),
+                  ),
                   const TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, remove product and move to checkout'),
                   const TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'Withdraw balance to register bank account'),
                   const TSettingsMenuTile(icon: Iconsax.bank, title: 'Band Account', subTitle: 'Set shopping delivery address'),

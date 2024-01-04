@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/utils/constants/colors.dart';
 
 class UserAddressScreen extends StatelessWidget {
@@ -13,6 +14,10 @@ class UserAddressScreen extends StatelessWidget {
         onPressed: () => Get.to(() => null),
         backgroundColor: TColors.primary,
         child: const Icon(Iconsax.add, color: TColors.white),
+      ),
+      appBar: TAppBar(
+        showBackArrow: true,
+        title: Text('Addresses', style: Theme.of(context).textTheme.headlineSmall),
       ),
     );
   }
