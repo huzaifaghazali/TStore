@@ -38,12 +38,27 @@ class CartScreen extends StatelessWidget {
                     const SizedBox(width: TSizes.spaceBtwItems),
 
                     /// Title, Price & Size
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        TBrandTitleWithVerifiedIcon(title: 'Nike'),
-                        TProductTitleText(title: 'Black Sports shoes', maxLines: 1),
-                      ],
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const TBrandTitleWithVerifiedIcon(title: 'Nike'),
+                          const TProductTitleText(title: 'Black Sports shoes', maxLines: 1),
+
+                          /// Attributes
+                          Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(text: 'Color: ', style: Theme.of(context).textTheme.bodySmall),
+                                TextSpan(text: 'Green ', style: Theme.of(context).textTheme.bodyLarge),
+                                TextSpan(text: 'Size: ', style: Theme.of(context).textTheme.bodySmall),
+                                TextSpan(text: 'UK 08 ', style: Theme.of(context).textTheme.bodyLarge),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     )
 
                   ],
