@@ -10,6 +10,7 @@ import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
+import '../../../../common/widgets/products/cart/add_remove_button.dart';
 import '../../../../common/widgets/products/cart/cart_item.dart';
 
 class CartScreen extends StatelessWidget {
@@ -32,37 +33,8 @@ class CartScreen extends StatelessWidget {
                 const TCartItem(),
                 const SizedBox(height: TSizes.spaceBtwItems),
 
-                Row(
-                  children: [
-                    const SizedBox(width: 70),
-                    /// Add Remove Buttons
-                   Row(
-                     children: [
-                       TCircularIcon(
-                         icon: Iconsax.minus,
-                         width: 32,
-                         height: 32,
-                         size: TSizes.md,
-                         color: dark ? TColors.white : TColors.black,
-                         backgroundColor: dark ? TColors.darkerGrey : TColors.light,
-                       ),
-                       const SizedBox(width: TSizes.spaceBtwItems),
-                       Text('2',style: Theme.of(context).textTheme.titleSmall),
-                       const SizedBox(width: TSizes.spaceBtwItems),
-                       const TCircularIcon(
-                         icon: Iconsax.add,
-                         width: 32,
-                         height: 32,
-                         size: TSizes.md,
-                         color: TColors.white,
-                         backgroundColor: TColors.primary,
-                       ),
-
-                     ],
-                   )
-
-                  ],
-                )
+                /// Add Remove Buttons
+                const TProductQuantityWithAddRemoveButton(),
               ],
             ),
           ),
