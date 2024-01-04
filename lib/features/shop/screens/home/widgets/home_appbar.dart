@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:t_store/features/shop/screens/cart/cart.dart';
 
 import '../../../../../common/widgets/appbar/appbar.dart';
 import '../../../../../common/widgets/products/cart/cart_menu_icon.dart';
@@ -20,7 +22,7 @@ class THomeAppBar extends StatelessWidget {
           Text(TTexts.homeAppbarSubTitle, style: Theme.of(context).textTheme.headlineSmall!.apply(color: TColors.white)),
         ],
       ),
-      actions: [TCartCounterIcon(onPressed: () {}, iconColor: TColors.white)],
+      actions: [TCartCounterIcon(onPressed: () => Get.to(() => const CartScreen()), iconColor: TColors.white)],
     );
   }
 }
