@@ -7,6 +7,8 @@ import 'package:t_store/features/personalization/screens/address/widgets/single_
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
+import 'add_new_address.dart';
+
 class UserAddressScreen extends StatelessWidget {
   const UserAddressScreen({super.key});
 
@@ -14,7 +16,7 @@ class UserAddressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Get.to(() => null),
+        onPressed: () => Get.to(() => const AddNewAddressScreen()),
         backgroundColor: TColors.primary,
         child: const Icon(Iconsax.add, color: TColors.white),
       ),
