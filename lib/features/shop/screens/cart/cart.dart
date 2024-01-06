@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
-import 'package:t_store/common/widgets/texts/product_price_text.dart';
 import 'package:t_store/utils/constants/sizes.dart';
-import '../../../../common/widgets/products/cart/add_remove_button.dart';
-import '../../../../common/widgets/products/cart/cart_item.dart';
 import 'widgets/cart_items.dart';
 
 class CartScreen extends StatelessWidget {
