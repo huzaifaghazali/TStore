@@ -41,10 +41,23 @@ class CheckoutScreen extends StatelessWidget {
                           enabledBorder: InputBorder.none,
                           errorBorder: InputBorder.none,
                           disabledBorder: InputBorder.none,
-
                         ),
                       ),
-                    )
+                    ),
+
+                    /// Button
+                    SizedBox(
+                      width: 80,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: dark ? TColors.white.withOpacity(0.5) : TColors.dark.withOpacity(0.5),
+                          backgroundColor: Colors.grey.withOpacity(0.2),
+                          side: BorderSide(color: Colors.grey.withOpacity(0.1)),
+                        ),
+                        child: const Text('Apply'),
+                      ),
+                    ),
                   ],
                 ),
               ),
