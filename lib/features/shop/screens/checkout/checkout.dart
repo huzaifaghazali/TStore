@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:t_store/common/widgets/success_screen/success_screen.dart';
 import 'package:t_store/features/shop/screens/cart/widgets/cart_items.dart';
 import 'package:t_store/features/shop/screens/checkout/widgets/billing_amount_section.dart';
 import 'package:t_store/features/shop/screens/checkout/widgets/billing_payment_section.dart';
+import 'package:t_store/navigation_menu.dart';
 import 'package:t_store/utils/constants/colors.dart';
+import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
@@ -59,6 +63,18 @@ class CheckoutScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+
+      /// Checkout button
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(TSizes.defaultSpace),
+        child: ElevatedButton(
+            onPressed: () => Get.to(() => SuccessScreen(
+                image: TImages.successfulPaymentIcon,
+                title: 'Payment Success!',
+                subtitle: 'Your item will be shipped soon!',
+                onPressed: () => Get.offAll(() => const NavigationMenu()))),
+            child: const Text('Checkout \$256.0')),
       ),
     );
   }
