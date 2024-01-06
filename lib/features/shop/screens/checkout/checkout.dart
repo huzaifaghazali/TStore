@@ -52,6 +52,7 @@ class CheckoutScreen extends StatelessWidget {
                     SizedBox(height: TSizes.spaceBtwItems),
 
                     /// Address
+                    TBillingAddressSection()
                   ],
                 ),
               ),
