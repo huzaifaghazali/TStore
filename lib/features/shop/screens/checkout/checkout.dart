@@ -8,6 +8,7 @@ import 'package:t_store/utils/constants/sizes.dart';
 import '../../../../common/widgets/appbar/appbar.dart';
 import '../../../../common/widgets/products/cart/coupon.widget.dart';
 import '../../../../utils/helpers/helper_functions.dart';
+import 'widgets/billing_address_section.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({super.key});
@@ -39,13 +40,16 @@ class CheckoutScreen extends StatelessWidget {
                   children: [
                     /// Pricing
                     TBillingPaymentSection(),
-                    const SizedBox(height: TSizes.spaceBtwItems),
+                    SizedBox(height: TSizes.spaceBtwItems),
 
                     /// Divider
-                    const Divider(),
-                    const SizedBox(height: TSizes.spaceBtwItems),
+                    Divider(),
+                    SizedBox(height: TSizes.spaceBtwItems),
 
                     /// Payment Method
+                    TBillingAddressSection(),
+                    SizedBox(height: TSizes.spaceBtwItems),
+
                     /// Address
                   ],
                 ),
