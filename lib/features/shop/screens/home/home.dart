@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/common/widgets/products/products_cart/product_cart_vertical.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:t_store/features/shop/screens/home/widgets/promo_slider.dart';
@@ -9,6 +8,7 @@ import 'package:t_store/utils/constants/sizes.dart';
 import '../../../../common/widgets/Layouts/grid_layout.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
+import '../../../../common/widgets/products/products_card/product_card_vertical.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 
 class HomeScreen extends StatelessWidget {
