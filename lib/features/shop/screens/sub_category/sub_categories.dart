@@ -5,6 +5,8 @@ import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
+import '../../../../common/widgets/products/products_card/product_card_horizontal.dart';
+
 class SubCategoriesScreen extends StatelessWidget {
   const SubCategoriesScreen({super.key});
 
@@ -27,6 +29,8 @@ class SubCategoriesScreen extends StatelessWidget {
                   /// Heading
                   TSectionHeading(title: 'Sports shirts', onPressed: (){}),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
+
+                  const TProductCardHorizontal(),
                 ],
               )
 
