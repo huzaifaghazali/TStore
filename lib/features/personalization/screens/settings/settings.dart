@@ -7,6 +7,7 @@ import 'package:t_store/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/features/personalization/screens/address/address.dart';
 import 'package:t_store/features/personalization/screens/profile/profile.dart';
+import 'package:t_store/features/shop/screens/cart/cart.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
@@ -48,7 +49,12 @@ class SettingsScreen extends StatelessWidget {
                     subTitle: 'Set shopping delivery address',
                     onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
-                  const TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, remove product and move to checkout'),
+                  TSettingsMenuTile(
+                    icon: Iconsax.shopping_cart,
+                    title: 'My Cart',
+                    subTitle: 'Add, remove product and move to checkout',
+                    onTap: () => Get.to(() => const CartScreen()),
+                  ),
                   const TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'Withdraw balance to register bank account'),
                   const TSettingsMenuTile(icon: Iconsax.bank, title: 'Band Account', subTitle: 'Set shopping delivery address'),
                   const TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons'),
