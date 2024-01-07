@@ -12,6 +12,7 @@ import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
 import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
+import '../../../shop/screens/order/order.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -55,7 +56,12 @@ class SettingsScreen extends StatelessWidget {
                     subTitle: 'Add, remove product and move to checkout',
                     onTap: () => Get.to(() => const CartScreen()),
                   ),
-                  const TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'Withdraw balance to register bank account'),
+                  TSettingsMenuTile(
+                    icon: Iconsax.bag_tick,
+                    title: 'My Orders',
+                    subTitle: 'Withdraw balance to register bank account',
+                    onTap: () => Get.to(() => const OrderScreen()),
+                  ),
                   const TSettingsMenuTile(icon: Iconsax.bank, title: 'Band Account', subTitle: 'Set shopping delivery address'),
                   const TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons'),
                   const TSettingsMenuTile(icon: Iconsax.notification, title: 'Notification', subTitle: 'Set any kind of notification message'),
