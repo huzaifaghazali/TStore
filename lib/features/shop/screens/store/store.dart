@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:t_store/common/widgets/Layouts/grid_layout.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/appbar/tabbar.dart';
@@ -17,6 +18,7 @@ import '../../../../common/widgets/brands/brand_show_case.dart';
 import '../../../../common/widgets/brands/t_brand_card.dart';
 import '../../../../common/widgets/images/t_circular_image.dart';
 import '../../../../common/widgets/texts/t_brand_title_text_with_verfied_icon.dart';
+import '../brand/all_brands.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -56,7 +58,7 @@ class StoreScreen extends StatelessWidget {
                     const SizedBox(height: TSizes.spaceBtwItems),
       
                     /// Heading
-                    TSectionHeading(title: 'Featured Brands', onPressed: (){}),
+                    TSectionHeading(title: 'Featured Brands', onPressed: () => Get.to(() => const AllBrandsScreen())),
                     const SizedBox(height: TSizes.spaceBtwItems / 1.5),
       
                     ///  Grid Brands
