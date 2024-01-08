@@ -5,10 +5,10 @@ import '../../../../../utils/device/device_utility.dart';
 
 class TRatingProgressIndicator extends StatelessWidget {
   const TRatingProgressIndicator({
-    super.key, this.text, required this.value,
+    super.key, required this.text, required this.value,
   });
 
-  final text;
+  final String text;
   final double value;
 
   @override
