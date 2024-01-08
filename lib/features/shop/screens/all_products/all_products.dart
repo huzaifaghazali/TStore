@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/common/widgets/Layouts/grid_layout.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
+import 'package:t_store/common/widgets/products/products_card/product_card_vertical.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
 class AllProducts extends StatelessWidget {
@@ -23,7 +25,10 @@ class AllProducts extends StatelessWidget {
                     .map((option) => DropdownMenuItem(value: option, child: Text(option)))
                     .toList(),
               ),
-              const SizedBox(height: TSizes.spaceBtwSections)
+              const SizedBox(height: TSizes.spaceBtwSections),
+
+              /// Products
+              TGridLayout(itemCount: 8, itemBuilder: (_, index) => const TProductCardVertical())
             ],
           ),
         ),
