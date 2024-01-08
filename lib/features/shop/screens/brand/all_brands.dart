@@ -4,6 +4,7 @@ import 'package:t_store/common/widgets/Layouts/grid_layout.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/brands/t_brand_card.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/features/shop/screens/brand/brand_products.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
 import '../../../../common/widgets/products/sortable/sortable_products.dart';
@@ -30,7 +31,7 @@ class AllBrandsScreen extends StatelessWidget {
                 mainAxisExtent: 80,
                 itemBuilder: (context, index) => TBrandCard(
                   showBorder: true,
-                  onTap: () => Get.to(() => const TSortableProducts()),
+                  onTap: () => Get.to(() => const BrandProducts()),
                 ),
               ),
             ],
