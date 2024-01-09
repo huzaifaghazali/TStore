@@ -18,6 +18,9 @@
 *.iml
 .idea/
 
+# File
+firebase_options.dart
+
 # Xcode
 *.xcworkspace/
 *.xcodeproj/
@@ -66,3 +69,5 @@
 
 # Flutter package dependencies
 .packages
+
+
